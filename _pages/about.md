@@ -3,6 +3,20 @@ permalink: /about/
 title: "About"
 ---
 
-Tempor velit sint sunt ipsum tempor enim ad qui ullamco. Est dolore anim ad velit duis dolore minim sunt aliquip amet commodo labore. Ut eu pariatur aute ea aute excepteur laborum. Esse ea esse excepteur minim mollit qui cillum excepteur ex dolore magna. Labore deserunt fugiat incididunt incididunt sint ea. Consequat dolore aute laboris quis proident quis non et est consectetur ex eiusmod sit culpa.
+<br>
 
-Cupidatat ea do et in excepteur in. Ad nostrud ut est esse eu duis ea sunt eiusmod. Aliquip tempor veniam sint elit fugiat. Velit incididunt laboris amet incididunt labore dolore irure velit excepteur commodo deserunt laborum. Consectetur eu fugiat veniam veniam Lorem labore magna eiusmod. Ea occaecat reprehenderit pariatur consectetur minim labore ut aliquip.
+# Contact
+
+Send me a message at g_verdon@live.concorida.ca. You can also get in touch with me through GitHub or LinkedIn.
+
+# Background and Education
+
+I was born and raised in Canada, and right now I'm studying at Concordia University. Before that, I was in Computer Science and Mathematics at Vanier College. I'd like to do a lot more once I graduate with my bachelor's degree in software engineering.
+
+# Hobbies
+
+Fitness and engineering projects are the hobbies that I really enjoy outside of school. Video games every once in a while are cool too.
+
+# About this Website
+
+This website was created with the <a href="https://jekyllrb.com/" target="blank">Jekyll</a> static site generator and <a href="https://mmistakes.github.io/minimal-mistakes/" target="blank">Minimal Mistakes</a> theme. <a href="https://pages.github.com/" target="blank">GitHub Pages</a> is used to serve it from a repository.

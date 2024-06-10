@@ -14,11 +14,9 @@
 # You can create any custom variable you would like, and they will be accessible
 # in the templates via {{ site.myvariable }}.
 title: Giuliano Verdone
-email:
+email: g_verdon@live.concorida.ca
 description: >- # this means to ignore newlines until "baseurl:"
-  Write an awesome description for your new site here. You can edit this
-  line in _config.yml. It will appear in your document head meta (for
-  Google search results) and in your feed.xml site description.
+  I'm an undergraduate software engineering student at Concordia University seeking a Summer 2024 internship.
 twitter_username: username
 github_username: Verdone
 minimal_mistakes_skin: dark
@@ -60,7 +58,7 @@ plugins:
 author:
   name: "Giuliano Verdone"
   avatar: "/assets/images/bio-photo.jpg"
-  bio: "I'm an undergraduate software engineering student at Concordia University seeking a Summer 2024 internship."
+  bio: "Third-year undergrad at Concordia University pursuing B.Eng Software Engineering."
   links:
     - label: "LinkedIn"
       icon: "fab fa-fw fa-linkedin"
@@ -68,6 +66,9 @@ author:
     - label: "GitHub"
       icon: "fab fa-fw fa-github"
       url: "https://github.com/Verdone"
+    # - label: "Resume"
+    #   icon: "fa-fw fa-regular fa-file-lines"
+    #   url: ""
 
 footer:
   links:
@@ -77,6 +78,11 @@ footer:
     - label: "GitHub"
       icon: "fab fa-fw fa-github"
       url: "https://github.com/Verdone"
+
+collections:
+  portfolio:
+    output: true
+    permalink: /:collection/:path/
 
 defaults:
   # _posts
@@ -97,6 +103,14 @@ defaults:
     values:
       layout: single
       author_profile: true
+  # _portfolio
+  - scope:
+      path: "_portfolio"
+      type: portfolio
+    values:
+      layout: single
+      author_profile: false
+      share: true
 
 category_archive:
   type: liquid
