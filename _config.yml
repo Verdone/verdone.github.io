@@ -14,10 +14,11 @@
 # You can create any custom variable you would like, and they will be accessible
 # in the templates via {{ site.myvariable }}.
 title: Giuliano Verdone
+author: Giuliano Verdone
 email: g_verdon@live.concorida.ca
+repository: Verdone/verdone.github.io
 description: >- # this means to ignore newlines until "baseurl:"
   I'm an undergraduate software engineering student at Concordia University seeking a Summer 2024 internship.
-twitter_username: username
 github_username: Verdone
 minimal_mistakes_skin: dark
 search: true
