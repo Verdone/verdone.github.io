@@ -3,9 +3,9 @@ title: "Physics Simulations"
 excerpt: "Educational and interactive simulations related to standing waves for myr CEGEP capstone project."
 last_modified_at: 2024-05-14T16:20:02-05:00
 header:
-  teaser: /assets/images/blog/2024/physics-sim-waves.png
+  teaser: /assets/images/blog/2024/physics-showcase-waves.png
 sidebar:
-  - image: /assets/images/blog/2024/physics-sim-waves.png
+  - image: /assets/images/blog/2024/physics-showcase-waves.png
     image_alt: "physics simulation demonstration"
   - title: "Role"
     text: "Desktop Application Developer"
