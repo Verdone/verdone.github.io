@@ -1,6 +1,6 @@
 ---
 title: "Physics Simulations"
-excerpt: "Educational and interactive simulations related to standing waves for myr CEGEP capstone project."
+excerpt: "Educational and interactive simulations related to standing waves for my CEGEP capstone project."
 last_modified_at: 2024-05-14T16:20:02-05:00
 header:
   teaser: /assets/images/blog/2024/physics-showcase-waves.png

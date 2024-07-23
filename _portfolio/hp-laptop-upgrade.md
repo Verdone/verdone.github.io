@@ -5,7 +5,7 @@ last_modified_at: 2024-06-09T16:20:02-05:00
 header:
   teaser: /assets/images/blog/2024/linux_mint.jpg
 sidebar:
-  - title: "Current Specs"
+  - title: "Updated Specs"
     image: /assets/images/blog/2024/linux_mint.jpg
     image_alt: "logo"
     text: "

@@ -7,15 +7,15 @@ title: "About"
 
 # Contact
 
-Send me a message at g_verdon@live.concorida.ca. You can also get in touch with me through GitHub or LinkedIn.
+Send me a message at g_verdon@live.concorida.ca and I will get back to you as soon as possile.
 
 # Background and Education
 
-I was born and raised in Canada, and right now I'm studying at Concordia University. Before that, I was in Computer Science and Mathematics at Vanier College. I'd like to do a lot more once I graduate with my bachelor's degree in software engineering.
+I was born and raised in Canada, and right now I'm studying at Concordia University. Before that, I was in Computer Science and Mathematics at Vanier College.
 
 # Hobbies
 
-Fitness and engineering projects are the hobbies that I really enjoy outside of school. Video games every once in a while are cool too.
+Fitness and engineering projects are the hobbies that I really enjoy outside of school.
 
 # About this Website
 
