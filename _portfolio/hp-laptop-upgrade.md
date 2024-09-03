@@ -1,6 +1,6 @@
 ---
-title: "A Laptop That’s Good as New"
-excerpt: "Upgrading a 2017 HP 15-bs0xx laptop."
+title: "Laptop Upgrade"
+excerpt: "Upgrading an old 2017 HP 15-bs0xx laptop."
 last_modified_at: 2024-06-09T16:20:02-05:00
 header:
   teaser: /assets/images/blog/2024/linux_mint.jpg

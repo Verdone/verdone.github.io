@@ -22,7 +22,7 @@ sidebar:
 
 ## What's this Website About?
 
-I wanted to make a website for exploring data structures, algorithms, and more. There's a lot of sections that remain unfinished, such as the portion for system design. In any case, I'm proud of how the sorting algorithm sections turned out.
+I wanted to make a website for exploring computer science topics. There's a lot of sections that remain unfinished, such as the portion for system design. In any case, I'm proud of how the sorting algorithm sections turned out.
 
 ## Focus on Sorting Algorithms
 

@@ -8,7 +8,7 @@ header:
   caption: 'Photo credit: [**Creative Commons**](https://creativecommons.org/licenses/by/4.0/){:target="_blank"}'
 ---
 
-Hi, my name is Giuliano and welcome to my website. I enjoy uploading blog posts and showcasing software/non-software projects that I'm working on; feel free to check them out.
+Hi, my name is Giuliano and welcome to my website. I enjoy uploading blog posts and showcasing projects.
 
 ## Current Interests
 

@@ -17,20 +17,14 @@ sidebar:
 
 ## About This Project
 
-The tech stack is mentioned on this page already, but you can also view the <a href="https://invoice-generator-seven-sable.vercel.app/licensing" target="blank">Licensing</a> page on the website for the full list of attributions.
-
 Using pdfmake, the website takes client-side form inputs to generate an invoice. The items that will appear on the invoice also have the option to include Québec sales tax (QST) and/or goods and services tax (GST) lines if applicable. 
 
-The inspiration behind this project was that I was fed up of seeing invoices generated with a watermark at the bottom. Things turned out great as this was simple and easy to create (mostly thanks to the open-source libraries used.)
+The inspiration behind this project was just not wanting to have invoices generated with a watermark at the bottom. Things turned out great as this was simple and easy to create (mostly thanks to the open-source libraries used.)
 
 ## Learning Outcomes
 
-This small programming project reminded me of my Univeristy assignments. It also helped me better understand the differences between software engineering and programming. After continuous work on a Software-as-a-Service project, making this invoice generator over the weekend felt much different. 
+This small programming project reminded me of my Univeristy assignments. It also helped me better understand the differences between software engineering and programming.
 
-When it comes to something that lasts a few days and brings with it little to no maintenance, it's likely that your main focus isn't on things such as integration tests and continuous deployment practices. In contrast to large-scale projects, there were no meetings for system design, code review, or dependency management to create this invoice generator. I think that the book titled <a href="https://abseil.io/resources/swe-book" target="blank">"Software Engineering at Google" by Titus Winters, Tom Manshreck and Hyrum Wright</a> properly explains what I'm trying to convey:
+When it comes to something that lasts a few days and brings with it little to no maintenance, your main focus isn't on things like large-scale infrastructure design. In contrast to large-scale projects, there were no meetings for system design, code review, or dependency management to create this simple invoice generator. I didn't worry about sanitizing a client-side form or using a type validation library.
 
-> Programming is the immediate act of producing code. Software engineering is the set of policies, practices, and tools that are necessary to make that code useful for as long as it needs to be used and allowing collaboration across a team.
-
-Both programming and software engineering are good in their own right. In the scope of this personal project, I won't worry as to whether I need to sanitize my form, or worry about implementing a declaration/ validation library just so that end users can generate simple PDF documents.
-
-There's something to be said about putting effort into an engineering project though. The attention to detail in each part of a project, the correct decision-makiing, and the success that could follow from all the little things done right, culminates in an incredibly rewarding experience. I think that small-scale programming projects such as this one are rewarding — especially when it's a learning experience or when you have the privelege to work with great open-source libraries — but I think I like the idea of having the opportunity to work on larger, more serious engineering projects.
+I think that small-scale programming projects such as this one are rewarding but I think I like the idea of having the opportunity to work on larger, serious engineering projects.
