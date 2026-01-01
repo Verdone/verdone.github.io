@@ -2,6 +2,24 @@
 
 Click [**Use this template**](https://github.com/mmistakes/mm-github-pages-starter/generate) button above for the quickest method of getting started with the [Minimal Mistakes Jekyll theme](https://github.com/mmistakes/minimal-mistakes).
 
+## Project Setup
+
+**Windows:**
+1. Install [Ruby+Devkit](https://rubyinstaller.org/)
+2. Run: `gem install bundler`
+3. Run: `bundle install`
+4. Run: `bundle exec jekyll serve --livereload` (`--livereload` is an optional flag)
+5. Visit: `http://localhost:4000`
+
+**macOS/Linux:**
+1. Install Ruby (usually pre-installed)
+2. Run: `gem install bundler`
+3. Run: `bundle install`
+4. Run: `bundle exec jekyll serve --livereload` (`--livereload` is an optional flag)
+5. Visit: `http://localhost:4000`
+
+---
+
 Contains basic configuration to get you a site with:
 
 - Sample posts.
