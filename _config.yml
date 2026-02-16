@@ -59,7 +59,7 @@ plugins:
 author:
   name: "Giuliano Verdone"
   avatar: "/assets/images/bio-photo.jpg"
-  bio: "Third-year undergrad at Concordia University pursuing B.Eng Software Engineering."
+  bio: "Final year undergrad Software Engineering student at Concordia University."
   links:
     - label: "LinkedIn"
       icon: "fab fa-fw fa-linkedin"
