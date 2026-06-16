@@ -1,0 +1,563 @@
+---
+layout: single
+---
+
+<style>
+/* ── Google Fonts ── */
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Inter:wght@400;500;600&display=swap');
+
+/* ── Reset scoped to recipe ── */
+.recipe-page *,
+.recipe-page *::before,
+.recipe-page *::after {
+  box-sizing: border-box;
+}
+
+/* ── Page wrapper ── */
+.recipe-page {
+  font-family: 'Inter', system-ui, sans-serif;
+  font-size: 1rem;
+  line-height: 1.6;
+  color: #e8e6e3;
+}
+
+/* ── Toolbar ── */
+.recipe-toolbar {
+  display: flex;
+  justify-content: flex-start;
+  margin-bottom: 1rem;
+}
+
+.recipe-print-button {
+  appearance: none;
+  border: 1.5px solid #e07b39;
+  border-radius: 999px;
+  padding: 0.45rem 1.05rem;
+  font-family: 'Inter', sans-serif;
+  font-size: 0.82rem;
+  font-weight: 600;
+  cursor: pointer;
+  color: #e07b39;
+  background: transparent;
+  letter-spacing: 0.03em;
+  transition: background 0.15s, color 0.15s;
+}
+
+.recipe-print-button:hover,
+.recipe-print-button:focus-visible {
+  background: #e07b39;
+  color: #1a1e27;
+  outline: none;
+}
+
+/* ── Card ── */
+.recipe-card {
+  background: #2e3446;
+  border-radius: 1rem;
+  border: 1px solid rgba(255,255,255,0.08);
+  box-shadow: 0 2px 8px rgba(0,0,0,0.35), 0 12px 40px rgba(0,0,0,0.25);
+  overflow: hidden;
+}
+
+/* ── Hero (when image present and not sidebar) ── */
+.recipe-hero {
+  position: relative;
+  height: 20rem;
+  background: #1a1e27;
+  overflow: hidden;
+}
+
+.recipe-hero img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+
+.recipe-hero-gradient {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to bottom,
+    rgba(26,30,39,0.1) 0%,
+    rgba(26,30,39,0.2) 40%,
+    rgba(26,30,39,0.85) 100%
+  );
+}
+
+.recipe-hero-text {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: 1.5rem 1.75rem;
+}
+
+/* ── No-image header ── */
+.recipe-header-plain {
+  padding: 1.75rem 1.75rem 0;
+}
+
+/* ── Kicker pill ── */
+.recipe-kicker {
+  display: inline-block;
+  margin-bottom: 0.45rem;
+  padding: 0.18rem 0.65rem;
+  border-radius: 999px;
+  background: #e07b39;
+  color: #1a1e27;
+  font-size: 0.7rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.13em;
+}
+
+/* ── Title ── */
+.recipe-title {
+  margin: 0;
+  font-family: 'Playfair Display', Georgia, serif;
+  font-size: clamp(1.5rem, 3.5vw, 2.1rem);
+  font-weight: 700;
+  line-height: 1.15;
+  color: #f0ede8;
+}
+
+.recipe-hero .recipe-title {
+  text-shadow: 0 1px 10px rgba(0,0,0,0.6);
+}
+
+/* ── Card body ── */
+.recipe-body {
+  padding: 1.5rem 1.75rem 1.75rem;
+}
+
+/* ── Description ── */
+.recipe-description {
+  margin: 0.85rem 0 1.5rem;
+  color: #a8a4a0;
+  font-size: 0.95rem;
+  line-height: 1.7;
+}
+
+/* ── Meta tiles — servings + difficulty only ── */
+.recipe-meta-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(8rem, 1fr));
+  gap: 0.55rem;
+  margin-bottom: 1.5rem;
+}
+
+.recipe-meta-item {
+  padding: 0.75rem 1rem;
+  border-radius: 0.65rem;
+  background: #252a34;
+  border: 1px solid rgba(255,255,255,0.07);
+}
+
+.recipe-meta-label {
+  display: block;
+  font-size: 0.68rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  color: #6b6a68;
+  margin-bottom: 0.2rem;
+}
+
+.recipe-meta-value {
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: #e8e6e3;
+}
+
+/* ── Divider ── */
+.recipe-divider {
+  border: none;
+  border-top: 1px solid rgba(255,255,255,0.07);
+  margin: 0 0 1.5rem;
+}
+
+/* ── Two-column layout: ingredients + steps ── */
+.recipe-columns {
+  display: grid;
+  grid-template-columns: 1fr 1.6fr;
+  gap: 2rem;
+  align-items: start;
+}
+
+@media (max-width: 580px) {
+  .recipe-columns {
+    grid-template-columns: 1fr;
+    gap: 1.25rem;
+  }
+  .recipe-body {
+    padding: 1.25rem;
+  }
+}
+
+/* ── Section headings ── */
+.recipe-section-heading {
+  margin: 0 0 0.9rem;
+  font-family: 'Playfair Display', Georgia, serif;
+  font-size: 1.05rem;
+  font-weight: 600;
+  color: #f0ede8;
+  padding-bottom: 0.45rem;
+  border-bottom: 2px solid #e07b39;
+  display: inline-block;
+}
+
+/* ── Group heading (shared by ingredients + steps) ── */
+.recipe-group {
+  margin-bottom: 1.25rem;
+}
+
+.recipe-group:last-child {
+  margin-bottom: 0;
+}
+
+.recipe-group-label {
+  display: block;
+  font-size: 0.72rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.13em;
+  color: #e07b39;
+  margin-bottom: 0.5rem;
+  padding-bottom: 0.3rem;
+  border-bottom: 1px solid rgba(224,123,57,0.25);
+}
+
+/* ── Ingredients ── */
+.recipe-ingredients-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.recipe-ingredients-list li {
+  padding: 0.48rem 0;
+  border-bottom: 1px solid rgba(255,255,255,0.06);
+  font-size: 0.9rem;
+  color: #d4d0cc;
+  display: flex;
+  align-items: baseline;
+  gap: 0.55rem;
+}
+
+.recipe-ingredients-list li::before {
+  content: '';
+  flex-shrink: 0;
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background: #e07b39;
+  position: relative;
+  top: -1px;
+}
+
+.recipe-ingredients-list li:last-child {
+  border-bottom: none;
+}
+
+/* ── Steps ── */
+/* Counter resets per-group so each section starts at 1 */
+.recipe-group .recipe-steps-list {
+  counter-reset: steps;
+}
+
+/* A single continuous list (no groups) still works */
+.recipe-steps-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  counter-reset: steps;
+}
+
+.recipe-steps-list li {
+  counter-increment: steps;
+  padding: 0 0 1.1rem 2.9rem;
+  position: relative;
+  font-size: 0.9rem;
+  color: #d4d0cc;
+  line-height: 1.68;
+}
+
+.recipe-steps-list li::before {
+  content: counter(steps);
+  position: absolute;
+  left: 0;
+  top: 0.05rem;
+  width: 1.8rem;
+  height: 1.8rem;
+  border-radius: 50%;
+  background: #e07b39;
+  color: #1a1e27;
+  font-size: 0.76rem;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.recipe-steps-list li:last-child {
+  padding-bottom: 0;
+}
+
+/* ── Notes ── */
+.recipe-note {
+  margin-top: 1.5rem;
+  padding: 0.9rem 1.15rem;
+  background: rgba(224,123,57,0.08);
+  border-left: 3px solid #e07b39;
+  border-radius: 0 0.55rem 0.55rem 0;
+}
+
+.recipe-note-heading {
+  margin: 0 0 0.3rem;
+  font-family: 'Playfair Display', Georgia, serif;
+  font-size: 0.97rem;
+  font-weight: 600;
+  color: #e07b39;
+}
+
+.recipe-note-body p,
+.recipe-note-body li {
+  margin: 0 0 0.5rem;
+  font-size: 0.88rem;
+  color: #a8a4a0;
+  line-height: 1.62;
+}
+
+.recipe-note-body p:last-child,
+.recipe-note-body li:last-child {
+  margin-bottom: 0;
+}
+
+.recipe-note-body ul,
+.recipe-note-body ol {
+  padding-left: 1.2rem;
+  margin: 0.4rem 0 0.5rem;
+}
+
+.recipe-note-body strong {
+  color: #d4d0cc;
+  font-weight: 600;
+}
+
+/* ── MM sidebar tweaks — make sidebar image + text cards match the dark theme ── */
+.sidebar .author__content,
+.sidebar .author__bio,
+.sidebar .author__urls-wrapper {
+  color: #d4d0cc;
+}
+
+/* Override MM's default light widget background on sidebar blocks */
+.page__content ~ .sidebar .widget,
+.sidebar h4 {
+  color: #e8e6e3;
+}
+
+/* ── Print ── */
+@media print {
+  .masthead,
+  .page__footer,
+  .page__related,
+  .page__share,
+  .page__comments,
+  .author__avatar,
+  .author__urls,
+  .author__bio,
+  .sidebar,
+  .recipe-toolbar,
+  .search-content,
+  .greedy-nav__toggle,
+  .recipe-hero img,
+  .recipe-hero-gradient {
+    display: none !important;
+  }
+
+  body, .recipe-page {
+    background: #fff !important;
+    color: #111 !important;
+  }
+
+  .recipe-card {
+    box-shadow: none !important;
+    border: 1px solid #ccc !important;
+    background: #fff !important;
+  }
+
+  .recipe-hero {
+    height: auto !important;
+    background: #fff !important;
+  }
+
+  .recipe-hero .recipe-hero-text {
+    position: static !important;
+    padding: 1.5rem 1.5rem 0 !important;
+  }
+
+  .recipe-title { color: #111 !important; text-shadow: none !important; }
+  .recipe-kicker { background: #333 !important; color: #fff !important; }
+  .recipe-description { color: #444 !important; }
+  .recipe-meta-item { background: #f4f4f4 !important; border-color: #ddd !important; }
+  .recipe-meta-label { color: #888 !important; }
+  .recipe-meta-value { color: #111 !important; }
+  .recipe-section-heading { color: #111 !important; border-color: #333 !important; }
+  .recipe-ingredients-list li,
+  .recipe-steps-list li { color: #222 !important; border-color: #ddd !important; }
+  .recipe-steps-list li::before { background: #333 !important; color: #fff !important; }
+  .recipe-ingredients-list li::before { background: #333 !important; }
+  .recipe-group-label { color: #444 !important; border-color: #bbb !important; }
+  .recipe-note { background: #f9f9f9 !important; border-color: #999 !important; }
+  .recipe-note-heading { color: #333 !important; }
+  .recipe-note-body p,
+  .recipe-note-body li,
+  .recipe-note-body strong { color: #444 !important; }
+  .recipe-divider { border-color: #ddd !important; }
+
+  .recipe-columns {
+    grid-template-columns: 1fr 1.6fr !important;
+  }
+
+  .page, .page__inner-wrap, .recipe-page {
+    max-width: none !important;
+    width: 100% !important;
+    margin: 0 !important;
+    padding: 0 !important;
+  }
+
+  a { color: #111 !important; text-decoration: none !important; }
+}
+</style>
+
+<div class="recipe-page" itemscope itemtype="https://schema.org/Recipe">
+
+  <div class="recipe-toolbar">
+    <button type="button" class="recipe-print-button" onclick="window.print()">Print recipe</button>
+  </div>
+
+  <div class="recipe-card">
+
+    {% if page.image and page.image_position != "sidebar" %}
+      <!-- Full-bleed hero image -->
+      <div class="recipe-hero">
+        <img
+          src="{{ page.image | relative_url }}"
+          alt="{{ page.image_alt | default: page.title }}"
+          itemprop="image"
+        >
+        <div class="recipe-hero-gradient"></div>
+        <div class="recipe-hero-text">
+          <span class="recipe-kicker">Recipe</span>
+          <h1 class="recipe-title" itemprop="name">{{ page.title }}</h1>
+        </div>
+      </div>
+    {% else %}
+      <!-- No hero image: plain header -->
+      <div class="recipe-header-plain">
+        <span class="recipe-kicker">Recipe</span>
+        <h1 class="recipe-title" itemprop="name">{{ page.title }}</h1>
+      </div>
+    {% endif %}
+
+    <div class="recipe-body">
+
+      {% if page.description %}
+        <p class="recipe-description" itemprop="description">{{ page.description }}</p>
+      {% endif %}
+      {% if content != blank %}
+        <div class="recipe-description">{{ content }}</div>
+      {% endif %}
+
+      <!-- Meta tiles: servings + difficulty only (times live in the MM sidebar) -->
+      {% if page.servings or page.difficulty %}
+        <div class="recipe-meta-grid" aria-label="Recipe details">
+          {% if page.servings %}
+          <div class="recipe-meta-item">
+            <span class="recipe-meta-label">Servings</span>
+            <span class="recipe-meta-value" itemprop="recipeYield">{{ page.servings }}</span>
+          </div>
+          {% endif %}
+          {% if page.difficulty %}
+          <div class="recipe-meta-item">
+            <span class="recipe-meta-label">Difficulty</span>
+            <span class="recipe-meta-value">{{ page.difficulty }}</span>
+          </div>
+          {% endif %}
+        </div>
+      {% endif %}
+
+      <hr class="recipe-divider">
+
+      <!-- Ingredients + Instructions -->
+      <div class="recipe-columns">
+        {% if page.ingredients %}
+        <section aria-label="Ingredients">
+          <h2 class="recipe-section-heading">Ingredients</h2>
+          {% assign first_ingredient = page.ingredients | first %}
+          {% if first_ingredient.group %}
+            {% comment %} Grouped format {% endcomment %}
+            {% for group in page.ingredients %}
+              <div class="recipe-group">
+                <span class="recipe-group-label">{{ group.group }}</span>
+                <ul class="recipe-ingredients-list">
+                  {% for item in group.items %}
+                    <li itemprop="recipeIngredient">{{ item }}</li>
+                  {% endfor %}
+                </ul>
+              </div>
+            {% endfor %}
+          {% else %}
+            {% comment %} Flat format (backwards compatible) {% endcomment %}
+            <ul class="recipe-ingredients-list">
+              {% for ingredient in page.ingredients %}
+                <li itemprop="recipeIngredient">{{ ingredient }}</li>
+              {% endfor %}
+            </ul>
+          {% endif %}
+        </section>
+        {% endif %}
+
+        {% if page.steps %}
+        <section aria-label="Instructions">
+          <h2 class="recipe-section-heading">Instructions</h2>
+          {% assign first_step = page.steps | first %}
+          {% if first_step.group %}
+            {% comment %} Grouped format — steps reset to 1 per group {% endcomment %}
+            {% for group in page.steps %}
+              <div class="recipe-group">
+                <span class="recipe-group-label">{{ group.group }}</span>
+                <ol class="recipe-steps-list" itemprop="recipeInstructions">
+                  {% for item in group.items %}
+                    <li>{{ item }}</li>
+                  {% endfor %}
+                </ol>
+              </div>
+            {% endfor %}
+          {% else %}
+            {% comment %} Flat format (backwards compatible) {% endcomment %}
+            <ol class="recipe-steps-list" itemprop="recipeInstructions">
+              {% for step in page.steps %}
+                <li>{{ step }}</li>
+              {% endfor %}
+            </ol>
+          {% endif %}
+        </section>
+        {% endif %}
+      </div>
+
+      {% assign notes_text = page.notes | strip %}
+      {% if notes_text != "" %}
+        <div class="recipe-note" role="note">
+          <p class="recipe-note-heading">Notes</p>
+          <div class="recipe-note-body">{{ page.notes | markdownify }}</div>
+        </div>
+      {% endif %}
+
+    </div><!-- /.recipe-body -->
+  </div><!-- /.recipe-card -->
+</div><!-- /.recipe-page -->

@@ -84,6 +84,10 @@ collections:
   portfolio:
     output: true
     permalink: /:collection/:path/
+  recipes:
+    output: true
+    sort_by: date
+    permalink: /recipes/:path/
 
 defaults:
   # _posts
@@ -112,6 +116,15 @@ defaults:
       layout: single
       author_profile: false
       share: true
+  # _recipes
+  - scope:
+      path: "_recipes"
+      type: recipes
+    values:
+      layout: recipe
+      author_profile: false
+      share: true
+      classes: wide
 
 category_archive:
   type: liquid
